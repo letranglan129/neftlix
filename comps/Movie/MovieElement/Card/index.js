@@ -1,6 +1,7 @@
 import MovieItemWrapper from '../Items/Wrapper'
+import {memo } from 'react'
 
-export default function MovieCard({ title, espisode, process, time }) {
+const MovieCard = ({ title, espisode, process, time }) => {
     return (
         <MovieItemWrapper>
             <div>
@@ -39,3 +40,5 @@ export default function MovieCard({ title, espisode, process, time }) {
         </MovieItemWrapper>
     )
 }
+
+export default memo(MovieCard)
