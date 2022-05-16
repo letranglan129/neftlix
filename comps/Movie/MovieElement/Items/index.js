@@ -1,13 +1,14 @@
+import { memo } from 'react'
 import IMDB from '../../IMDB'
 
-export default function MovieItem({
+const MovieItem = ({
     title,
     imdb,
     episode,
     src,
     releaseDate,
     classContainer,
-}) {
+}) => {
     return (
         <div
             className={`bg-white dark:bg-transparent dark:text-white border-2 border-transparent dark:border-[#42434e] p-[10px] rounded-[20px] h-full flex flex-col justify-between transition-transform duration-300 transform hover:-translate-y-3 ${classContainer}`}
@@ -40,3 +41,5 @@ export default function MovieItem({
         </div>
     )
 }
+
+export default memo(MovieItem)

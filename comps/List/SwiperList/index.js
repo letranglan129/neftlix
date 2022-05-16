@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Button, Swiper as ButtonSwiper } from '../../Button'
 
@@ -76,4 +77,4 @@ SwiperList.Swiper = ({ children, swiperParams, name, viewMore = false }) => {
     )
 }
 
-export default SwiperList
+export default memo(SwiperList)

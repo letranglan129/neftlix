@@ -1,4 +1,6 @@
-export default function IMDB({ imdb, className }) {
+import { memo } from 'react'
+
+const IMDB = ({ imdb, className }) => {
     return (
         <div
             className={`px-3 text-center py-1 border-2 bg-[#fffae8] dark:bg-[#38352d] dark:text-white border-[#ffcd1b] rounded-lg mr-4 ${className}`}
@@ -10,3 +12,5 @@ export default function IMDB({ imdb, className }) {
         </div>
     )
 }
+
+export default memo(IMDB)
