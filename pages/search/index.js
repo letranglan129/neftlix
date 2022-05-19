@@ -53,10 +53,7 @@ export default function SearchPage() {
     return (
         <>
             <Head>
-                <meta
-                    name="Description"
-                    CONTENT="Neftlix - Search"
-                ></meta>
+                <meta name="Description" CONTENT="Neftlix - Search"></meta>
                 <title>Neftlix - Search: {keyword}</title>
                 <meta name="robots" content="noindex,nofollow"></meta>
             </Head>
@@ -67,12 +64,14 @@ export default function SearchPage() {
                 title={router.query.keyword}
                 conditionShow={true}
             />
-            <Pagination
-                isLoading={loading}
-                handlePageClick={handlePageClick}
-                page={page}
-                totalPage={totalPage}
-            />
+            {loading === false && list.length !== 0 && (
+                <Pagination
+                    isLoading={loading}
+                    handlePageClick={handlePageClick}
+                    page={page}
+                    totalPage={totalPage}
+                />
+            )}
         </>
     )
 }

@@ -8,8 +8,6 @@ export default function Results({
     topic,
     title,
     conditionShow,
-    page,
-    totalPage,
 }) {
     return (
         <div className="grid grid-cols-12 lg:grid-cols-10 gap-4">
@@ -21,7 +19,9 @@ export default function Results({
                             <span>{title}</span>
                         </>
                     )}
-                    {topic && !title && <b className="font-semibold">{topic}</b>}
+                    {topic && !title && (
+                        <b className="font-semibold">{topic}</b>
+                    )}
                 </h2>
             </div>
 
@@ -31,7 +31,23 @@ export default function Results({
                 </div>
             )}
 
-            {list.length !== 0 &&
+            {!loading && list.length === 0 && (
+                <div className="col-span-12">
+                    <div className="mx-auto max-w-xs">
+                        <img src="/images/no-results.svg" alt="" />
+                    </div>
+                    <h2 className="text text-center text-xl font-semibold">
+                        We couldn't find any results
+                    </h2>
+                    <p className="text text-center">
+                        Make sure all words are spelled correctly or try another
+                        keyword.
+                    </p>
+                </div>
+            )}
+
+            {!loading &&
+                list.length > 0 &&
                 list?.map(
                     (item, index) =>
                         conditionShow && (
