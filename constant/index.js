@@ -110,5 +110,7 @@ export const GENRES_LIST = [
     },
 ]
 
+export const URL_LINK_CV = 'https://api-constant.herokuapp.com/portfolio?segment=CV'
+
 export const EMAIL_REG =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/

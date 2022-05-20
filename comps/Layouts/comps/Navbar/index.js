@@ -1,11 +1,11 @@
 import Link from 'next/link'
-import { useRef, useState } from 'react'
+import { memo, useRef, useState } from 'react'
 import { NAVBAR_LINKS } from '../../../../constant'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
 
-export default function Navbar() {
+const Navbar = () => {
     const [isOpenNav, setIsOpenNav] = useState(false)
     const { register, handleSubmit, setValue } = useForm()
     const router = useRouter()
@@ -28,10 +28,10 @@ export default function Navbar() {
             })
         }
     }
-    
+
     const showNotifyUpdating = () => {
         toast.info("We're updating our website", {
-            position: "bottom-left",
+            position: 'bottom-left',
             autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
@@ -56,10 +56,7 @@ export default function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
             <div className="navbar-container">
-                <button
-                    className="navbar-toggler"
-                    onClick={handleOpenNav}
-                >
+                <button className="navbar-toggler" onClick={handleOpenNav}>
                     <i className="far fa-bars"></i>
                 </button>
 
@@ -74,24 +71,22 @@ export default function Navbar() {
                             isOpenNav ? 'navbar-nav active' : 'navbar-nav'
                         }`}
                     >
-                        <button
-                            className="close-nav"
-                            onClick={handleCloseNav}
-                        >
+                        <button className="close-nav" onClick={handleCloseNav}>
                             <i className="fal fa-times"></i>
                         </button>
                         {NAVBAR_LINKS.map((link, index) => (
-                            <li className="nav-item" key={index} onClick={showNotifyUpdating}>
+                            <li
+                                className="nav-item"
+                                key={index}
+                                onClick={showNotifyUpdating}
+                            >
                                 <a className="nav-link" href={link.href}>
                                     {link.name}
                                 </a>
                             </li>
                         ))}
 
-                        <div
-                            className="overlay"
-                            onClick={handleCloseNav}
-                        ></div>
+                        <div className="overlay" onClick={handleCloseNav}></div>
                     </ul>
                 </div>
 
@@ -145,7 +140,10 @@ export default function Navbar() {
                     </div>
 
                     <div className="dropdown relative">
-                        <a className="dropdown-toggle" onClick={showNotifyUpdating}>
+                        <a
+                            className="dropdown-toggle"
+                            onClick={showNotifyUpdating}
+                        >
                             <i className="fas fa-bell"></i>
                             <span className="text-white bg-red-700 absolute rounded-full text-xs -mt-2.5 ml-2 py-0 px-1.5">
                                 1
@@ -174,3 +172,5 @@ export default function Navbar() {
         </nav>
     )
 }
+
+export default memo(Navbar)

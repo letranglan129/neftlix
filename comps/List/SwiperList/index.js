@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useCallback } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Button, Swiper as ButtonSwiper } from '../../Button'
 
@@ -51,13 +51,13 @@ SwiperList.Swiper = ({ children, swiperParams, name, viewMore = false }) => {
     const formatClass = (string = '') => {
         return string.replaceAll(' ', '.')
     }
-    const renderSlide = () => {
+    const renderSlide = useCallback(() => {
         if (Array.isArray(children)) {
             return children?.map((child, index) => (
                 <SwiperSlide key={index}>{child}</SwiperSlide>
             ))
         }
-    }
+    })
 
     return (
         <Swiper

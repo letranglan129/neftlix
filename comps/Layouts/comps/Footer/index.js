@@ -1,12 +1,30 @@
+import axios from 'axios'
+import { memo, useEffect, useState } from 'react'
+import { URL_LINK_CV } from '../../../../constant'
 import { Button } from '../../../Button'
 
-export default function Footer() {
+const Footer = () => {
+    const [infoDev, setInfoDev] = useState({
+        portfolioLink: '',
+        cv: '',
+    })
+
+    useEffect(() => {
+        const getInfoDev = async () => {
+            const { data } = await axios.get(URL_LINK_CV)
+            setInfoDev(data)
+        }
+        getInfoDev()
+    }, [])
+
     return (
-        <div className='mt-16'>
+        <div className="mt-16">
             <div className="py-14 bg-white dark:bg-[#111111] ">
                 <div className="container">
                     <div className="text mx-auto flex flex-col items-center justify-center">
-                        <h1 className="text-3xl md:text-5xl mb-6">Le Lan Developer</h1>
+                        <h1 className="text-3xl md:text-5xl mb-6">
+                            Le Lan Developer
+                        </h1>
                         <p className="text-center md:max-w-lg leading-8 mb-6">
                             This is the web made by Le Lan. The website is for
                             educational purposes only and may not be used or
@@ -57,10 +75,10 @@ export default function Footer() {
                             </a>
                         </p>
                         <div className="mx-auto sm:mx-0">
-                            <Button text target="_blank">
+                            <Button href={infoDev.portfolioLink} text target="_blank" classCustom='dark:!text-white'>
                                 Portfolio
                             </Button>
-                            <Button text target="_blank">
+                            <Button href={infoDev.cv} text target="_blank" classCustom='dark:!text-white'>
                                 CV
                             </Button>
                         </div>
@@ -70,3 +88,5 @@ export default function Footer() {
         </div>
     )
 }
+
+export default memo(Footer)

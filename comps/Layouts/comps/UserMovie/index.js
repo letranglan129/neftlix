@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic'
-import { useEffect, useRef, useState } from 'react'
+import { memo, useEffect, useRef, useState } from 'react'
 import Modal from 'react-modal'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navigation } from 'swiper'
@@ -21,7 +21,7 @@ const MovieItemDynamic = dynamic(() => import('../../../Movie/MovieElement/Items
 
 Modal.setAppElement('#__next')
 
-export default function UserMovie() {
+const UserMovie = () => {
     const [isOpenManager, setIsOpenManager] = useState(false)
     const [isOpenLogin, setIsOpenLogin] = useState(false)
     const user = useSelector((state) => state.user.info)
@@ -282,3 +282,5 @@ export default function UserMovie() {
         </>
     )
 }
+
+export default memo(UserMovie)
