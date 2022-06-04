@@ -20,6 +20,7 @@ export default function _document() {
                     content="Xem trực tuyến các bộ phim và chương trình truyền hình của Netflix hoặc phát trực tuyến ngay trên TV thông minh, máy chơi game, máy tính, Mac, di động, máy tính bảng và nhiều thiết bị khác nữa."
                     name="description"
                 />
+                <meta name="google-site-verification" content="rDYVY2V_0jzc128EnEkJLBd6PcBoDXYaSVrGWezTpyY" />
                 <meta
                     content="xem phim, phim trực tuyến, xem TV, TV trực tuyến, chương trình truyền hình trực tuyến, xem chương trình truyền hình, phim phát trực tuyến, TV phát trực tuyến, phát trực tuyến tức thì, xem trực tuyến, phim, xem phim Việt Nam, xem TV trực tuyến, không cần tải xuống, phim trọn bộ"
                     name="keywords"
