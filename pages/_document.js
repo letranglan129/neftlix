@@ -4,6 +4,10 @@ export default function _document() {
     return (
         <Html>
             <Head>
+                <meta name="Description" CONTENT="Neftlix - Le Trang Lan IT" />
+        
+                <title>Neftlix - Home</title>    
+        
                 <link
                     rel="shortcut icon"
                     href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico"
