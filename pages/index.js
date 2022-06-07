@@ -12,14 +12,6 @@ export default function HomePage() {
 
     return (
         <>
-            <Head>
-                <meta
-                    name="Description"
-                    CONTENT="Neftlix - Le Trang Lan IT"
-                ></meta>
-                <title>Home - Neftlix</title>
-                <meta name="robots" content="noindex,nofollow"></meta>
-            </Head>
             <div className="mb-10">
                 <Banner movies={list?.topRatedMovies?.results} />
             </div>
