@@ -4,9 +4,8 @@ export default function _document() {
     return (
         <Html>
             <Head>
-                <meta name="Description" CONTENT="Neftlix - Le Trang Lan IT" />
-        
-                <title>Neftlix - Home</title>    
+                <title>Neftlix</title>
+                <meta property="og:title" content="Neftlix" key="title" />   
         
                 <link
                     rel="shortcut icon"

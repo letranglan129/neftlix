@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Head from 'next/head'
 import { useSelector } from 'react-redux'
 import { Navigation } from 'swiper'
 import Banner from '../comps/Banner'
