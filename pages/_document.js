@@ -4,7 +4,7 @@ export default function _document() {
     return (
         <Html>
             <Head>
-                <title>Neftlix</title>
+                <title></title>
                 <meta property="og:title" content="Neftlix" key="title" />   
         
                 <link
