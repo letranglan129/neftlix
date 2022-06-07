@@ -91,13 +91,13 @@ export default function PlayMovie({ movie }) {
                     <div className="relative pb-[56.25%] h-0 mb-8">
                         <IfameVideo
                             scrolling="no"
-                            src={`https://fsapi.xyz/tmdb-movie/${id}`}
+                            src={`https://up2download.com/embed/${id}`}
                         ></IfameVideo>
                     </div>
                     <div className="">
                         <div className="grid grid-cols-12 gap-4">
                             <div className="col-span-8">
-                                <h2 className="text text-2xl mb-4">
+                                <h2 className="mb-4 text-2xl text">
                                     {movie?.title}
                                 </h2>
                             </div>
@@ -110,8 +110,8 @@ export default function PlayMovie({ movie }) {
                                 </div>
                             </div>
                         </div>
-    
-                        <div className="flex items-center flex-wrap mb-4">
+
+                        <div className="flex flex-wrap items-center mb-4">
                             {movie?.genres.map((genre) => (
                                 <Button
                                     to={`/genre?q=${genre.name}&page=1`}
@@ -124,17 +124,17 @@ export default function PlayMovie({ movie }) {
                                 </Button>
                             ))}
                         </div>
-                        <p className="text text-base leading-7">
+                        <p className="text-base leading-7 text">
                             Release Date: {movie?.release_date}
                         </p>
-                        <p className="text text-base leading-7">
+                        <p className="text-base leading-7 text">
                             {movie?.overview}
                         </p>
                     </div>
                 </div>
-    
+
                 <div className="col-span-12 960:col-span-4">
-                    <h2 className="text text-3xl 960:text-4xl font-semibold mb-2">
+                    <h2 className="mb-2 text-3xl font-semibold text 960:text-4xl">
                         Similar
                     </h2>
                     <SimpleBar
@@ -157,7 +157,7 @@ export default function PlayMovie({ movie }) {
                                                     className="!w-full"
                                                     src={`${process.env.NEXT_PUBLIC_IMAGES_W200_URL}${movie.poster_path}`}
                                                 >
-                                                    <p className="text text-sm mb-2 line-clamp-2">
+                                                    <p className="mb-2 text-sm text line-clamp-2">
                                                         {movie.title}
                                                     </p>
                                                 </MovieItemWrapper>
@@ -179,7 +179,7 @@ export default function PlayMovie({ movie }) {
                                                 >
                                                     <div className="flex justify-between flex-1">
                                                         <div>
-                                                            <p className="text text-base mb-2 line-clamp-2">
+                                                            <p className="mb-2 text-base text line-clamp-2">
                                                                 {movie.title}
                                                             </p>
                                                             <div className="w-[96px]">
@@ -198,7 +198,7 @@ export default function PlayMovie({ movie }) {
                                     </Link>
                                 )
                         })}
-    
+
                         <div>{loading && 'Loading...'}</div>
                         <div>{error && 'Error...'}</div>
                     </SimpleBar>
