@@ -91,7 +91,7 @@ export default function PlayMovie({ movie }) {
                     <div className="relative pb-[56.25%] h-0 mb-8">
                         <IfameVideo
                             scrolling="no"
-                            src={`https://up2download.com/embed/${id}`}
+                            src={`https://embedworld.xyz/public/embed/${id}`}
                         ></IfameVideo>
                     </div>
                     <div className="">
