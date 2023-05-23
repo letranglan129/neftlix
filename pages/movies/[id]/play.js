@@ -91,7 +91,7 @@ export default function PlayMovie({ movie }) {
                     <div className="relative pb-[56.25%] h-0 mb-8">
                         <IfameVideo
                             scrolling="no"
-                            src={`https://embedworld.xyz/public/embed/${id}`}
+                            src={`https://2embed.org/embed/movie?tmdb=${id}`}
                         ></IfameVideo>
                     </div>
                     <div className="">
