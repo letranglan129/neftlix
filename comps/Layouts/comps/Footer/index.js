@@ -11,7 +11,9 @@ const Footer = () => {
 
     useEffect(() => {
         const getInfoDev = async () => {
-            const { data } = await axios.get(URL_LINK_CV)
+            const { data } = await axios.get(
+                process.env.NEXT_PUBLIC_URL_LINK_CV
+            )
             setInfoDev(data)
         }
         getInfoDev()

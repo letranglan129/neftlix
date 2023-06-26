@@ -82,16 +82,19 @@ export default function PlayMovie({ movie }) {
     return (
         <>
             <Head>
-                    <meta name="Description" CONTENT={`Neftlix - Play ${movie?.title}`}></meta>
-                    <title>Neftlix - MoviePlayer - {movie?.title}</title>
-                    <meta name="robots" content="noindex,nofollow"></meta>
+                <meta
+                    name="Description"
+                    CONTENT={`Neftlix - Play ${movie?.title}`}
+                ></meta>
+                <title>Neftlix - MoviePlayer - {movie?.title}</title>
+                <meta name="robots" content="noindex,nofollow"></meta>
             </Head>
             <div className="grid grid-cols-12 gap-4">
                 <div className="col-span-12 960:col-span-8">
                     <div className="relative pb-[56.25%] h-0 mb-8">
                         <IfameVideo
                             scrolling="no"
-                            src={`https://2embed.org/embed/movie?tmdb=${id}`}
+                            src={`https://frembed.com/api/film.php?id=${id}`}
                         ></IfameVideo>
                     </div>
                     <div className="">

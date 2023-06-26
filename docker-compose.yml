@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+    neftlix:
+        restart: always
+        build:
+            context: .
+            dockerfile: dockerfile
+        ports:
+            - 8003:3000
+        command: 'npm run start'
+        environment:
+            - PORT=3000
+            - NEXT_PUBLIC_FIREBASE_MEASUREMENTID=G-D9PWTK0MXY
+            - NEXT_PUBLIC_FIREBASE_APPID=1:584267677647:web:e6415b66f2f55362791cba
+            - NEXT_PUBLIC_FIREBASE_MESSAGINGSENDERID=584267677647
+            - NEXT_PUBLIC_FIREBASE_STORAGEBUCKET=neftlix-92f45.appspot.com
+            - NEXT_PUBLIC_FIREBASE_PROJECTID=neftlix-92f45
+            - NEXT_PUBLIC_FIREBASE_AUTHDOMAIN=neftlix-92f45.firebaseapp.com
+            - NEXT_PUBLIC_FIREBASE_APIKEY=AIzaSyCrkR2W_ZpyAAlGfGaXevj-h6kwxDHc7Ro
+            - NEXT_PUBLIC_IMAGES_RAW_URL=https://image.tmdb.org/t/p/original
+            - NEXT_PUBLIC_IMAGES_W500_URL=https://image.tmdb.org/t/p/w500
+            - NEXT_PUBLIC_IMAGES_W400_URL=https://image.tmdb.org/t/p/w400
+            - NEXT_PUBLIC_IMAGES_W300_URL=https://image.tmdb.org/t/p/w300
+            - NEXT_PUBLIC_IMAGES_W200_URL=https://image.tmdb.org/t/p/w200
+            - NEXT_PUBLIC_API_URL=https://api.themoviedb.org/3
+            - NEXT_PUBLIC_ANALYTICS_ID=2e236e6123d58923f6feab95ded58a4d
+            - NEXT_PUBLIC_URL_LINK_CV=https://constant.letranglan.top/portfolio?segment=CV

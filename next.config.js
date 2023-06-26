@@ -5,6 +5,7 @@ const nextConfig = {
         domains: ['image.tmdb.org'],
         layoutRaw: true,
     },
+    output: 'export',
 }
 
 module.exports = nextConfig
